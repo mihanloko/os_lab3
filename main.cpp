@@ -69,7 +69,6 @@ int serverFunction(int num) {
 
 
 int clientFunction(int num) {
-    srand(time(nullptr));
     key_t MyIPC_Key;
     int MessageID, Repeat;
     Repeat = 1;
@@ -91,6 +90,7 @@ int clientFunction(int num) {
 }
 
 int main() {
+    srand(time(0));
     vector<thread> clients;
     vector<thread> servers;
     for (int i = 0; i < 3; i++) {
